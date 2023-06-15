@@ -21,27 +21,3 @@ class OpenAIService {
         return try? await AF.request(endpointUrl, method: .post, parameters: body, encoder: .json, headers: headers).serializingDecodable(OpenAIChatResponse.self).value
     }
 }
-
-struct OpenAIChatBody: Encodable {
-    let model: String
-    let messages: [OpenAIChatMessage]
-}
-
-struct OpenAIChatMessage: Codable {
-    let role: SenderRole
-    let content: String
-}
-
-enum SenderRole: String, Codable {
-    case system
-    case user
-    case assistant
-}
-
-struct OpenAIChatResponse: Decodable {
-    let choices: [OpenAIChatChoice]
-}
-
-struct OpenAIChatChoice: Decodable {
-    let message: OpenAIChatMessage
-}
