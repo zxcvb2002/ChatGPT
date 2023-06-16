@@ -12,7 +12,6 @@ struct ChatGPTApp: App {
     let persistenceController = PersistenceController.shared
     
     init() {
-            // 기본 accentColor 설정
             UITextField.appearance().tintColor = UIColor(named: "ButtonColor")
         }
 
