@@ -1,6 +1,20 @@
-# ChatGPT
+# GhapGPT
 
 OpenAI ChatGPT iOS App Clone Coding
+
+### API
+
+OpenAI-chatAPI
+
+### Model
+
+Gpt-3.5-Turbo
+
+A set of models that improve on GPT-3 and can understand as well as generate natural language or code
+
+# Library
+
+Alarmofire
 
 # Aciton
 
