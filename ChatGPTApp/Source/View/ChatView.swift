@@ -84,22 +84,38 @@ struct ChatView: View {
             .onAppear(perform: UIApplication.shared.hideKeyboard)
             .animation(.easeIn(duration: 0.275))
             
-            HStack {
+            Menu {
                 Button {
                     
                 } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: 55, height: 55)
-                            .foregroundColor(.backgroundColor)
-                            //.opacity(0.1)
-                        Image(systemName: "ellipsis")
-                            .foregroundColor(.metsysColor)
-                    }
+                    Label("History", systemImage: "clock")
                 }
-                .padding(.trailing)
-                .position(x: 350, y: 30)
+                
+                Button {
+                    
+                } label: {
+                    Label("Settings", systemImage: "gearshape.fill")
+                }
+                
+                Divider()
+                
+                Button {
+                    
+                } label: {
+                    Label("New chat", systemImage: "plus")
+                }
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(width: 55, height: 55)
+                        .foregroundColor(.backgroundColor)
+                        //.opacity(0.1)
+                    Image(systemName: "ellipsis")
+                        .foregroundColor(.metsysColor)
+                }
             }
+            .position(x: 350, y: 30)
+            
         }
     }
 }
