@@ -1,4 +1,4 @@
-# GhapGPT
+# ChapGPT
 
 OpenAI ChatGPT iOS App Clone Coding
 
