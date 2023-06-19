@@ -18,7 +18,6 @@ struct OpenAIChatMessage: Codable {
     let content: String
 }
 
-
 struct OpenAIChatResponse: Decodable {
     let choices: [OpenAIChatChoice]
 }
