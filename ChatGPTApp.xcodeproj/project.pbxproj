@@ -21,9 +21,10 @@
 		887FF3C12A336F1600DC1D2C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FF3C02A336F1600DC1D2C /* ChatViewModel.swift */; };
 		887FF3C32A336FE900DC1D2C /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FF3C22A336FE900DC1D2C /* OpenAIService.swift */; };
 		887FF3C92A33703000DC1D2C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 887FF3C82A33703000DC1D2C /* Alamofire */; };
-		887FF3CB2A3371B500DC1D2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887FF3CA2A3371B500DC1D2C /* Constants.swift */; };
 		88BDC33B2A39C90500F0B829 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDC33A2A39C90500F0B829 /* Color.swift */; };
 		88BDC33D2A39E2FA00F0B829 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDC33C2A39E2FA00F0B829 /* UIApplication.swift */; };
+		88F2E60F2A4B2C960062543D /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2E60E2A4B2C960062543D /* HistoryView.swift */; };
+		88F2E6112A4B2CA40062543D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2E6102A4B2CA40062543D /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +61,10 @@
 		887FF3B32A336E9D00DC1D2C /* ChatGPTAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		887FF3C02A336F1600DC1D2C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		887FF3C22A336FE900DC1D2C /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
-		887FF3CA2A3371B500DC1D2C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		88BDC33A2A39C90500F0B829 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		88BDC33C2A39E2FA00F0B829 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		88F2E60E2A4B2C960062543D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		88F2E6102A4B2CA40062543D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				887FF3932A336E9C00DC1D2C /* ChatView.swift */,
+				88F2E60E2A4B2C960062543D /* HistoryView.swift */,
+				88F2E6102A4B2CA40062543D /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,14 +109,6 @@
 				88192AC42A3ACDF5005AA933 /* Service */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		88192ABF2A3ACDC1005AA933 /* Secret */ = {
-			isa = PBXGroup;
-			children = (
-				887FF3CA2A3371B500DC1D2C /* Constants.swift */,
-			);
-			path = Secret;
 			sourceTree = "<group>";
 		};
 		88192AC02A3ACDCD005AA933 /* Model */ = {
@@ -169,12 +165,12 @@
 		88192AC62A3ACE35005AA933 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				88F2E6092A4B2AA60062543D /* Secrets */,
 				88192AC92A3ACEEF005AA933 /* App */,
 				88192ABD2A3ACCEF005AA933 /* View */,
 				88192ABE2A3ACCF9005AA933 /* Network */,
 				88192AC12A3ACDD2005AA933 /* ViewModel */,
 				88192AC02A3ACDCD005AA933 /* Model */,
-				88192ABF2A3ACDC1005AA933 /* Secret */,
 				88192AC22A3ACDE2005AA933 /* Util */,
 			);
 			path = Source;
@@ -242,6 +238,13 @@
 				887FF3B32A336E9D00DC1D2C /* ChatGPTAppUITestsLaunchTests.swift */,
 			);
 			path = ChatGPTAppUITests;
+			sourceTree = "<group>";
+		};
+		88F2E6092A4B2AA60062543D /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,10 +390,11 @@
 				88192AC82A3ACEA5005AA933 /* OpenAIModel.swift in Sources */,
 				887FF3C12A336F1600DC1D2C /* ChatViewModel.swift in Sources */,
 				88BDC33D2A39E2FA00F0B829 /* UIApplication.swift in Sources */,
-				887FF3CB2A3371B500DC1D2C /* Constants.swift in Sources */,
 				88BDC33B2A39C90500F0B829 /* Color.swift in Sources */,
+				88F2E60F2A4B2C960062543D /* HistoryView.swift in Sources */,
 				887FF39E2A336E9D00DC1D2C /* ChatGPTApp.xcdatamodeld in Sources */,
 				887FF3C32A336FE900DC1D2C /* OpenAIService.swift in Sources */,
+				88F2E6112A4B2CA40062543D /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

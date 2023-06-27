@@ -12,6 +12,8 @@ import CoreData
 struct ChatView: View {
     @ObservedObject var viewModel = ViewModel()
     @FocusState var textFieldIsFocused: Bool
+    @State private var showHistoryView = false
+    @State private var showSettingsView = false
     
     var body: some View {
         ZStack {
@@ -83,16 +85,23 @@ struct ChatView: View {
             }
             .onAppear(perform: UIApplication.shared.hideKeyboard)
             .animation(.easeIn(duration: 0.275))
-            
+            .sheet(isPresented: $showHistoryView) {
+                HistoryView()
+                    .presentationDetents([.medium, .height(420)])
+            }
+            .sheet(isPresented: $showSettingsView) {
+                SettingsView()
+            }
+
             Menu {
                 Button {
-                    
+                    showHistoryView = true
                 } label: {
                     Label("History", systemImage: "clock")
                 }
                 
                 Button {
-                    
+                    showSettingsView = true
                 } label: {
                     Label("Settings", systemImage: "gearshape.fill")
                 }
