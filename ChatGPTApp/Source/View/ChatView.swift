@@ -14,6 +14,7 @@ struct ChatView: View {
     @FocusState var textFieldIsFocused: Bool
     @State private var showHistoryView = false
     @State private var showSettingsView = false
+    @Binding var colorScheme: ColorScheme
     
     var body: some View {
         ZStack {
@@ -79,10 +80,10 @@ struct ChatView: View {
                             .bold()
                             .opacity(viewModel.currentInput == "" ? 0.5 : 1)
                     }
-                    
                 }
                 .padding()
             }
+            .environment(\.colorScheme, colorScheme)
             .onAppear(perform: UIApplication.shared.hideKeyboard)
             .animation(.easeIn(duration: 0.275))
             .sheet(isPresented: $showHistoryView) {
@@ -90,7 +91,7 @@ struct ChatView: View {
                     .presentationDetents([.medium, .height(420)])
             }
             .sheet(isPresented: $showSettingsView) {
-                SettingsView()
+                SettingsView(colorScheme: $colorScheme)
             }
 
             Menu {
@@ -124,13 +125,6 @@ struct ChatView: View {
                 }
             }
             .position(x: 350, y: 30)
-            
         }
-    }
-}
-
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -12,12 +12,15 @@ struct ChatGPTApp: App {
     let persistenceController = PersistenceController.shared
     
     init() {
-            UITextField.appearance().tintColor = UIColor(named: "ButtonColor")
-        }
-
+        UITextField.appearance().tintColor = UIColor(named: "ButtonColor")
+    }
+    
+    @State private var colorScheme: ColorScheme = .light // .system
+    
     var body: some Scene {
         WindowGroup {
-            ChatView()
+            ChatView(colorScheme: $colorScheme)
+                .environment(\.colorScheme, colorScheme)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

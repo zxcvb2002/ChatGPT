@@ -26,6 +26,13 @@ struct OpenAIChatChoice: Decodable {
     let message: OpenAIChatMessage
 }
 
+struct Message: Decodable {
+    let id: UUID
+    let role: SenderRole
+    let content: String
+    let createAt: Date
+}
+
 enum SenderRole: String, Codable {
     case system
     case user
